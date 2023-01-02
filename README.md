@@ -146,6 +146,7 @@ $ docker-compose down --volumes --rmi all
 
 This project was a short mock-up. 
 Please find the coming steps to improve it:
+* Add docstrings for the different files, functions, methods and classes
 * Add unit tests for the API endpoints logic.
 * Add proper authentication (OAuth2)
 * Add constraint rules for the People table columns
