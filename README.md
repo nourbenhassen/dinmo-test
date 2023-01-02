@@ -1,12 +1,30 @@
 # DinMo - Technical Assignment
 ***
 
-This project consists in a FastAPI backend application connected to a PostgreSQL DB. The DB contains one table named People having the following schema: id, name, age, gender, country, createdAt, updatedAt.
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Technologies](#technologies)
+3. [Project Setup](#project-setup)
+4. [Testing](#testing)
+5. [Deleting created images, containers, volumes](#deleting)
+6. [Improvements](#improvements)
+
+
+## __1. INTRODUCTION__
+<a name="introduction"></a>
+
+This project consists in a FastAPI backend application connected to a PostgreSQL DB. 
+
+The DB contains one table named People having the following schema: 
+
+id, name, age, gender, country, createdAt, updatedAt.
 
 The FastAPI backend is made of three API endpoints:
 
 
-* GET /api/people -> returns the average age of all the people (grouped by country) & the number of people from each country.
+* GET /api/people 
+
+-> returns the average age of all the people (grouped by country) & the number of people from each country.
 
 Example:
 ```
@@ -16,7 +34,9 @@ $ curl -X 'GET' \
   -H 'x-token: API_TOKEN'
 ```
 
-* POST /api/people -> inserts a list of people to the DB.
+* POST /api/people 
+
+-> inserts a list of people to the DB.
 
 Example:
 ```
@@ -42,7 +62,9 @@ $ curl -X 'POST' \
   ]
 }'
 ```
-* GET /api/people/gender-repartition/{country} -> returns the gender repartition (male/female) for a given country.
+* GET /api/people/gender-repartition/{country} 
+
+-> returns the gender repartition (male/female) for a given country.
 
 Example:
 ```
@@ -52,23 +74,16 @@ $ curl -X 'GET' \
   -H 'x-token: API_TOKEN'
 ```
 
-## Table of Contents
-1. [Technologies](#technologies)
-2. [Project Setup](#project-setup)
-3. [Testing](#testing)
-4. [Deleting created images, containers, volumes](#deleting)
-5. [Improvements](#improvements)
-
-## 1. Technologies
+## __2. TECHNOLOGIES__
 <a name="technologies"></a>
 
 A list of technologies used within the project:
 * [Docker](https://docs.docker.com/get-docker): Version 20.10.21
 * [Docker-compose](https://docs.docker.com/compose/install): Version 2.13.0
-* [psql](https://www.postgresql.org/download/): Version 15.1
-* [fastapi](https://fastapi.tiangolo.com/): Version 0.88.0
+* [Psql](https://www.postgresql.org/download/): Version 15.1
+* [Fastapi](https://fastapi.tiangolo.com/): Version 0.88.0
 
-Some other Python libraries used are:
+Other used Python libraries are:
 * Pytest: version 7.2.0
 * Uvicorn version 0.20.0
 * SQLAlchemy version 1.4.45
@@ -76,7 +91,7 @@ Some other Python libraries used are:
 * Httpx version 0.23.1
 
 
-### __2. PROJECT SETUP__
+### __3. PROJECT SETUP__
 <a name="project-setup"></a>
 
 Step 1 - Deploy the Postgres database container
@@ -97,7 +112,7 @@ Step 3 - Run the app
 $ uvicorn app.main:app --host localhost --port 8000 --reload
 ```
 
- Step 4 (optional) - You can connect to the DB to check the inserted values in the table
+ Step 4 (optional) - Connect to the DB to verify the inserted values in the table
 
 ```
 $ psql postgres://postgres:password123@127.0.0.1:6500/fastapi
@@ -112,7 +127,7 @@ Please note that you need to add the following API Token in the headers: "TEST-A
 
 
 
-### __3. TESTING__
+### __4. TESTING__
 <a name="testing"></a>
 For the moment only basic tests were added. These consist in testing that the different endpoints return the right response status code.
 
@@ -121,7 +136,7 @@ Please execute the following command to run the tests:
 $ pytest
 ```
 
- ### __4.DELETING IMAGES, CONTAINERS, VOLUMES THAT WERE CREATED__
+ ### __5. DELETING IMAGES, CONTAINERS, VOLUMES THAT WERE CREATED__
  <a name="deleting"></a>
 
 When you are done with the project and want to stop the containers & delete the created images/volumes please run:
@@ -130,15 +145,18 @@ When you are done with the project and want to stop the containers & delete the 
 $ docker-compose down --volumes --rmi all
 ```
 
-## 5. IMPROVEMENTS
+## __6. IMPROVEMENTS__
 <a name="improvements"></a>
 
-This project was a short mock-up. Please find the coming steps to improve it:
+This project was a short mock-up. 
+Please find the coming steps to improve it:
 * Add unit tests for the API endpoints logic.
 * Add proper authentication (OAuth2)
 * Add constraint rules for the People table columns
+
     -> age between 0 and 150 
+
     -> Gender only F or M
+    
     ...
 * Dockerize the application
-* Take into account the DB scaling
