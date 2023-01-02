@@ -17,7 +17,7 @@ This project consists in a FastAPI backend application connected to a PostgreSQL
 
 The DB contains one table named People with the following schema: 
 
-id, name, age, gender, country, createdAt, updatedAt.
+_id_, _name_, _age_, _gender_, _country_, _createdAt_, _updatedAt_.
 
 The FastAPI backend is made of three API endpoints:
 
