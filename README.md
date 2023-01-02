@@ -31,32 +31,21 @@ The Python libraries used are:
 ### __2. PROJECT SETUP__
 <a name="project-setup"></a>
 
-Step 1: Please run the following command to build the images contained in docker-compose.yaml:
-```
-$ docker-compose build
-```
-
-Step 2: Execute this command to run the corresponding containers:
+Step 1: Execute this command to run the postgres db container:
 
 ```
 $ docker-compose up -d
 ```
 
-Once the containers are running, you can go to  http://localhost:8000/docs to interact with the backend.
+Once the containers are running, you can go to  http://localhost:8000/docs to interact with the different api endpoints.
+Please note that you need to add the following API Token in the headers: "TEST-API-TOKEN"
 
 
 ### __3. TESTING__
 <a name="testing"></a>
-The functions used in the DAG were tested (tests can be found in *./tests/unit_tests*). 
+For now only basic tests were added. These consist in testing that the different endpoints return the right response status code.
 
-The OSS Airflow project uses pytest, so the same was used in this project.
-
-Before running the tests please install the required libs in your virtual environment by running the command:
-```
-$ pip install -r requirements.txt
-```
-
-Then copy the following command to run the tests:
+Please execute the following command to run the tests:
 ```
 $ pytest
 ```
