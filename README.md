@@ -97,10 +97,14 @@ Step 3 - Run the app
 $ uvicorn app.main:app --host localhost --port 8000 --reload
 ```
 
-Step 4 - You can connect to the DB to check the values in the table
+ Step 4 (optional) - You can connect to the DB to check the inserted values in the table
 
 ```
 $ psql postgres://postgres:password123@127.0.0.1:6500/fastapi
+```
+
+```
+$ select * from People;
 ```
 
 Once the Postgres db container is deployed and the app is running, you can go to  http://localhost:8000/docs to interact with the different API endpoints.
