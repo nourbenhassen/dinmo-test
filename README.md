@@ -36,7 +36,7 @@ $ curl -X 'GET' \
 
 * POST /api/people 
 
--> inserts a list of people to the DB.
+-> inserts a list of people to the People table.
 
 Example:
 ```
