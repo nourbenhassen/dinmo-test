@@ -150,9 +150,9 @@ Please find the coming steps to improve it:
 * Add proper authentication (OAuth2)
 * Add constraint rules for the People table columns
 
-    -> age between 0 and 150 
+    -> _age_ between 0 and 150 
 
-    -> Gender only F or M
+    -> _gender_ only F or M
     
     ...
 * Dockerize the application
