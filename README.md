@@ -118,7 +118,7 @@ $ uvicorn app.main:app --host localhost --port 8000 --reload
 $ psql postgres://postgres:password123@127.0.0.1:6500/fastapi
 ```
 
-Once the Postgres db container is deployed and the app is running, you can go to  http://localhost:8000/docs to interact with the different API endpoints.
+Once the Postgres database container is deployed and the app is running, you can go to  http://localhost:8000/docs to interact with the different API endpoints.
 Please note that you need to add the following API Token in the headers: "TEST-API-TOKEN".
 
 
