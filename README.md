@@ -78,6 +78,7 @@ $ curl -X 'GET' \
 <a name="technologies"></a>
 
 A list of technologies used within the project:
+* [Python](https://www.python.org/downloads/release/python-396): Version 3.9.6
 * [Docker](https://docs.docker.com/get-docker): Version 20.10.21
 * [Docker-compose](https://docs.docker.com/compose/install): Version 2.13.0
 * [Psql](https://www.postgresql.org/download/): Version 15.1
